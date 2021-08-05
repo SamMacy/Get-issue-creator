@@ -102,11 +102,11 @@ a=${_TOPICS#*topics}
 b=${a#*[}  
 topics=${b%]*}
 
-if [[ "$topics" =~ .*"$TOPIC1".* ]]; then
+if [[ "$topics" = .*"$TOPIC1".* ]]; then
    echo "It's there1!"
 fi
 
-if [[ "$topics" =~ .*"$TOPIC2".* ]]; then
+if [[ "$topics" == .*"$TOPIC2".* ]]; then
    echo "It's there2!"
 fi
 curl \
