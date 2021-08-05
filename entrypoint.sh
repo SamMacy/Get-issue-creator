@@ -1,9 +1,5 @@
 #!/bin/sh -l
 
-JQ=/bin/jq
-curl https://stedolan.github.io/jq/download/linux64/jq > $JQ && chmod +x $JQ
-ls -la $JQ
-
 PROJECT_URL="$INPUT_PROJECT"
 PROJECT1_URL="$INPUT_PROJECT1"
 PROJECT2_URL="$INPUT_PROJECT2"
@@ -103,11 +99,9 @@ _TOPICS=$(curl -s -X GET -u "$GITHUB_ACTOR:$TOKEN" --retry 3 \
             ${REPO_URL})
 
 tmp=${_TOPICS#*topics}  
+topics=${tmp%_]*}
 
-
-echo ${tmp}
-echo "space"
-echo $(jq '.topics' _TOPICS)
+echo ${topics}
 
 curl \
   -H "Accept: application/vnd.github.mercy-preview+json" \
