@@ -6,6 +6,12 @@ inputs:
   project:
     description: 'The url of the project to be assigned to.'
     required: true
+    project:
+    description: 'The url of the first tagged project to be assigned to.'
+    required: false
+    project:
+    description: 'The url of the first tagged project to be assigned to'
+    required: false
   column_name:
     description: 'The column name of the project, defaults to "To do" for issues and "In progress" for pull requests.'
     required: false
