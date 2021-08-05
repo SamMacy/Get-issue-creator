@@ -8,23 +8,13 @@ if [ -z "$PROJECT_URL" ]; then
   exit 1
 fi
 
-if [ -z "$PROJECT_URL1" ]; then
-  echo "PROJECT_URL is not defined." >&2
+if [ -z "$PROJECT1_URL" && "$PROJECT2_URL"]; then
+  echo "PROJECT1_URL is not defined." >&2
   exit 1
 fi
 
-if [ -z "$PROJECT_URL2" ]; then
-  echo "PROJECT_URL is not defined." >&2
-  exit 1
-fi
-
-if ["$PROJECT1_URL" && -z "$PROJECT2_URL"]; then
-  echo "PROJECT2_URL is not defined." >&2
-  exit 1
-fi
-
-if ["$PROJECT2_URL" && -z "$PROJECT1_URL"]; then
-  echo "PROJECT_URL is not defined." >&2
+if [ -z "$PROJECT2_URL" && "$PROJECT1_URL"]; then
+  echo "PROJECT_URL2 is not defined." >&2
   exit 1
 fi
 
