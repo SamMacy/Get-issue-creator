@@ -96,11 +96,11 @@ fi
 
 echo ${REPO_NAME}
 
-topics = $(curl \
+TOPICS = $(curl \
   -H "Accept: application/vnd.github.v3+json" \
   ${REPO_NAME})
   
-echo ${topics}
+echo ${TOPICS}
 
 
 curl \
