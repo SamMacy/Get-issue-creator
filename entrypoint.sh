@@ -4,7 +4,7 @@ PROJECT_URL="$INPUT_PROJECT"
 PROJECT1_URL="$INPUT_PROJECT1"
 PROJECT2_URL="$INPUT_PROJECT2"
 TOPIC1="$INPUT_TOPIC1"
-TOPIC2="$INPUT_TOPIC2"
+TOPIC1="$INPUT_TOPIC1"
 if [ -z "$PROJECT1_URL" ] && [ "$PROJECT2_URL" ]; then
   echo "PROJECT1_URL is not defined." >&2
   exit 1
@@ -15,9 +15,11 @@ if [ -z "$PROJECT2_URL" ] && [ "$PROJECT1_URL" ]; then
   exit 1
 fi
 
-if [ "$PROJECT2_URL" ] && [ "$PROJECT1_URL" ] && [ [ ! "$TOPIC1" ] || [ ! "$TOPIC2" ] ]; then
-  echo "A topic is not defined." >&2
- exit 1
+if [ "$PROJECT2_URL" ] && [ "$PROJECT1_URL" ]; then
+  if [ "$TOPIC1" ] && [ "$TOPIC2" ]; then
+    echo "A topic is not defined." >&2
+    exit 1
+  fi
 fi
 
 if [ -z "$PROJECT2_URL" ] && [ -z "$PROJECT1_URL" ] && [ -z "$PROJECT_URL" ]; then
