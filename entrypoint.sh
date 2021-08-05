@@ -37,7 +37,9 @@ get_project_type() {
       exit 1
       ;;
   esac
-  
+  unset _PROJECT_URL
+}
+
 if [ "$PROJECT2_URL" ] && [ "$PROJECT1_URL" ]; then
   get_project1_type() {
   _PROJECT_URL1="$1"
@@ -57,7 +59,9 @@ if [ "$PROJECT2_URL" ] && [ "$PROJECT1_URL" ]; then
       exit 1
       ;;
   esac
-  
+  unset _PROJECT_URL1
+}
+
   get_project2_type() {
   _PROJECT_URL2="$1"
 
@@ -76,10 +80,10 @@ if [ "$PROJECT2_URL" ] && [ "$PROJECT1_URL" ]; then
       exit 1
       ;;
   esac
-  
-fi
-  unset _PROJECT_URL
+  unset _PROJECT_URL2
 }
+
+fi
 
 find_project_id() {
   _PROJECT_TYPE="$1"
