@@ -5,23 +5,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), with an added `List of PRs` section and links to the relevant PRs on the individal updates. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/srggrs/assign-one-project-github-action/compare/prep-release-1.2.1...HEAD)
+## [1.3.0](https://github.com/srggrs/assign-one-project-github-action/compare/prep-release-1.2.1...HEAD) (2021-08-05)
 
 #### Added
-
-TBC
-
-#### Changed
-
-TBC
-
-#### Fixed
-
-TBC
-
-#### Removed
-
-TBC
+* Added ability to specify repository topics and put issues in a project if it has the topic.
 
 ## [1.2.1](https://github.com/srggrs/assign-one-project-github-action/compare/prep-release-1.2.1...HEAD) (2021-03-07)
 
