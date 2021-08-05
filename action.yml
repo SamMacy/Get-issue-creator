@@ -12,6 +12,9 @@ inputs:
   project2:
     description: 'The url of the first tagged project to be assigned to'
     required: false
+  topic:
+    description: 'The topic of the repository to check'
+    required: false
   column_name:
     description: 'The column name of the project, defaults to "To do" for issues and "In progress" for pull requests.'
     required: false
@@ -23,6 +26,7 @@ runs:
     - ${{ inputs.project }}
     - ${{ inputs.project1 }}
     - ${{ inputs.project2 }}
+    - ${{ inputs.topic }}
     - ${{ inputs.column_name }}
 
 branding:
