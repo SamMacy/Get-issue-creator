@@ -98,7 +98,8 @@ _TOPICS=$(curl -s -X GET -u "$GITHUB_ACTOR:$TOKEN" --retry 3 \
             -H "Accept: application/vnd.github.mercy-preview+json" \
             ${REPO_URL})
            
-echo ${_TOPICS}['topics'][0]
+echo ${_TOPICS}
+echo "space"
 echo $(curl -s ${_TOPICS} | jq -r '.topics')
 
 curl \
