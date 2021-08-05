@@ -106,11 +106,11 @@ echo ${topics}
 echo ${TOPIC1}
 echo ${TOPIC2}
 
-if [ ${topics} == *${TOPIC1}* ]; then
+if [[ ${topics} == *${TOPIC1}* ]]; then
    echo "It's there1!"
 fi
 
-if [ ${topics} == *${TOPIC2}* ]; then
+if [[ ${topics} == *${TOPIC2}* ]]; then
    echo "It's there2!"
 fi
 curl \
