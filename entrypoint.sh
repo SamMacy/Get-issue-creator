@@ -103,6 +103,8 @@ b=${a#*[}
 topics=${b%]*}
 
 echo ${topics}
+echo ${TOPIC1}
+echo ${TOPIC2}
 
 if [ ${topics} == *${TOPIC1}* ]; then
    echo "It's there1!"
