@@ -95,15 +95,15 @@ if [ "$PROJECT2_URL" ] && [ "$PROJECT1_URL" ]; then
 fi
 
 echo curl -s -X GET -u "$GITHUB_ACTOR:$TOKEN" --retry 3 \
-            -H "Accept: application/vnd.github.inertia-preview+json" \
+            -H "Accept: application/vnd.github.mercy-preview+json" \
              ${REPO_NAME}/topics
              
 echo $(curl -s -X GET -u "$GITHUB_ACTOR:$TOKEN" --retry 3 \
-            -H "Accept: application/vnd.github.inertia-preview+json" \
+            -H "Accept: application/vnd.github.mercy-preview+json" \
              ${REPO_NAME}/topics)
              
 _TOPICS=$(curl -s -X GET -u "$GITHUB_ACTOR:$TOKEN" --retry 3 \
-            -H "Accept: application/vnd.github.inertia-preview+json" \
+            -H "Accept: application/vnd.github.mercy-preview+json" \
              ${REPO_NAME}/topics)
            
 echo ${_TOPICS}
