@@ -95,9 +95,8 @@ if [ "$PROJECT2_URL" ] && [ "$PROJECT1_URL" ]; then
 fi
              
 _TOPICS=$(curl -s -X GET -u "$GITHUB_ACTOR:$TOKEN" --retry 3 \
-            -H "Accept: application/vnd.github.mercy-preview+json" \
-            X-GitHub-Media-Type: github.v3; param=full; format=json \
-            ${REPO_NAME}/topics)
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/octocat/hello-world)
            
 echo ${_TOPICS}
 
