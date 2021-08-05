@@ -1,7 +1,19 @@
 #!/bin/sh -l
 
 PROJECT_URL="$INPUT_PROJECT"
+PROJEC1T_URL="$INPUT_PROJECT1"
+PROJECT2_URL="$INPUT_PROJECT2"
 if [ -z "$PROJECT_URL" ]; then
+  echo "PROJECT_URL is not defined." >&2
+  exit 1
+fi
+
+if ["$PROJECT1_URL" && -z "$PROJECT2_URL"]; then
+  echo "PROJECT2_URL is not defined." >&2
+  exit 1
+fi
+
+if ["$PROJECT2_URL" && -z "$PROJECT1_URL"]; then
   echo "PROJECT_URL is not defined." >&2
   exit 1
 fi
