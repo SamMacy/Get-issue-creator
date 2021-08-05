@@ -73,7 +73,7 @@ if [ "$PROJECT2_URL" ] && [ "$PROJECT1_URL" ]; then
 }
 
   get_project2_type() {
-  _PROJECT_URL2="$2"
+  _PROJECT_URL2="$1"
 
   case "$_PROJECT2_URL" in
     https://github.com/orgs/*)
@@ -103,18 +103,18 @@ b=${a#*[}
 topics=${b%]*}
 echo $([[ "$topics" = .*"$TOPIC1".* ]])
 
-case "$topics" in
-*"$TOPIC1"*) echo yes ;;
-*       ) echo no ;;
-esac
-
-case "$topics" in
-*"$TOPIC1"*) echo yes ;;
-*       ) echo no ;;
-esac
-
 if echo "$topics" | grep -q "$TOPIC1"; then
-  echo it works
+  _PROJECT_TYPE="$1"
+  _PROJECT_URL="$2"
+fi
+
+elif echo "$topics" | grep -q "$TOPIC2"; then
+  _PROJECT_TYPE="$1"
+  _PROJECT_URL="$2"
+fi
+
+else; then
+  "This repository does not have a matching topic"
 fi
 
 curl \
@@ -122,8 +122,10 @@ curl \
   https://api.github.com/
   
 find_project_id() {
-  _PROJECT_TYPE="$1"
-  _PROJECT_URL="$2"
+  if [ "$PROJECT_URL" ]; then
+    _PROJECT_TYPE="$1"
+    _PROJECT_URL="$2"
+  fi
 
   case "$_PROJECT_TYPE" in
     org)
