@@ -24,28 +24,28 @@ if [ -z "$PROJECT2_URL" ] && [ -z "$PROJECT1_URL" ] && [ -z "$PROJECT_URL" ]; th
   echo "No PROJECT_URL defined." >&2
   exit 1
 fi
+if [ "$PROJECT_URL" ]; then
+  get_project_type() {
+    _PROJECT_URL="$1"
 
-get_project_type() {
-  _PROJECT_URL="$1"
-
-  case "$_PROJECT_URL" in
-    https://github.com/orgs/*)
-      echo "org"
-      ;;
-    https://github.com/users/*)
-      echo "user"
-      ;;
-    https://github.com/*/projects/*)
-      echo "repo"
-      ;;
-    *)
-      echo "Invalid PROJECT_URL: $_PROJECT_URL" >&2
-      exit 1
-      ;;
-  esac
-  unset _PROJECT_URL
-}
-
+    case "$_PROJECT_URL" in
+      https://github.com/orgs/*)
+        echo "org"
+        ;;
+      https://github.com/users/*)
+        echo "user"
+        ;;
+      https://github.com/*/projects/*)
+        echo "repo"
+        ;;
+      *)
+        echo "Invalid PROJECT_URL: $_PROJECT_URL" >&2
+        exit 1
+        ;;
+    esac
+    unset _PROJECT_URL
+  }
+fi
 if [ "$PROJECT2_URL" ] && [ "$PROJECT1_URL" ]; then
   get_project1_type() {
   _PROJECT_URL1="$1"
@@ -88,9 +88,12 @@ if [ "$PROJECT2_URL" ] && [ "$PROJECT1_URL" ]; then
   esac
   unset _PROJECT_URL2
 }
-
 fi
 
+curl \
+  -H "Accept: application/vnd.github.mercy-preview+json" \
+  https://api.github.com/
+  
 find_project_id() {
   _PROJECT_TYPE="$1"
   _PROJECT_URL="$2"
