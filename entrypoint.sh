@@ -1,7 +1,7 @@
 #!/bin/sh -l
 
 JQ=/usr/bin/jq
-curl https://stedolan.github.io/jq/download/linux64/jq > $JQ && chmod +x $JQ
+curl -sLo $JQ https://stedolan.github.io/jq/download/linux64/jq
 ls -la $JQ
 
 PROJECT_URL="$INPUT_PROJECT"
