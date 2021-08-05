@@ -99,7 +99,7 @@ _TOPICS=$(curl -s -X GET -u "$GITHUB_ACTOR:$TOKEN" --retry 3 \
             ${REPO_URL})
 
 tmp=${_TOPICS#*topics}  
-topics=${tmp%_]*}
+topics=${tmp%]*}
 
 echo ${topics}
 
