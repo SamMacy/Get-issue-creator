@@ -27,28 +27,28 @@ if [ -z "$PROJECT2_URL" ] && [ -z "$PROJECT1_URL" ] && [ -z "$PROJECT_URL" ]; th
   exit 1
 fi
 
-if [ "$PROJECT_URL" ]; then
-  get_project_type() {
-    _PROJECT_URL="$1"
+#if [ "$PROJECT_URL" ]; then
+get_project_type() {
+  _PROJECT_URL="$1"
 
-    case "$_PROJECT_URL" in
-      https://github.com/orgs/*)
-        echo "org"
-        ;;
-      https://github.com/users/*)
-        echo "user"
-        ;;
-      https://github.com/*/projects/*)
-        echo "repo"
-        ;;
-      *)
-        echo "Invalid PROJECT_URL: $_PROJECT_URL" >&2
-        exit 1
-        ;;
-    esac
-    unset _PROJECT_URL
-  }
-fi
+  case "$_PROJECT_URL" in
+    https://github.com/orgs/*)
+      echo "org"
+      ;;
+    https://github.com/users/*)
+      echo "user"
+      ;;
+    https://github.com/*/projects/*)
+      echo "repo"
+      ;;
+    *)
+      echo "Invalid PROJECT_URL: $_PROJECT_URL" >&2
+      exit 1
+      ;;
+  esac
+  unset _PROJECT_URL
+}
+#fi
 
 #if [ "$PROJECT2_URL" ] && [ "$PROJECT1_URL" ]; then
 #  get_project1_type() {
