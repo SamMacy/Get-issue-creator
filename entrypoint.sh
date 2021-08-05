@@ -111,7 +111,7 @@ elif echo "$topics" | grep -q "$TOPIC2"; then
   _PROJECT_TYPE="$1"
   _PROJECT_URL="$2"
 
-else then
+else
   "This repository does not have a matching topic"
 fi
 
