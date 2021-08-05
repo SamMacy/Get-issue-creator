@@ -1,8 +1,53 @@
 #!/bin/sh -l
 
-JQ=/usr/bin/jq
-curl -sLo $JQ https://stedolan.github.io/jq/download/linux64/jq
-ls -la $JQ
+getjq::prep(){
+  TEMP_DIR="$(mktemp -d jq-download.XXXXXXXXXX)"
+  cd $TEMP_DIR
+  if [ $? -ne 0 ]; then
+    echo "$0: Cannot change directory to $TEMP_DIR, exiting..."
+    exit 1
+  fi
+}
+
+getjq::makeExecutable(){
+ chmod +x doctor-jq
+}
+
+getjq::projectRoot(){
+ cd - > /dev/null
+}
+
+getjq::download(){
+  # NEED TO DO -- DYNAMICALLY GET URL BASED ON OS 
+  jqURL="https://github.com/stedolan/jq/releases/download/jq-1.6/jq-osx-amd64"
+  curl -sL -o doctor-jq "$jqURL"
+}
+
+
+getjq::install(){
+  getjq::prep
+  getjq::download
+  getjq::makeExecutable
+  getjq::projectRoot
+}
+
+
+getjq::cleanup() {
+  rm -rf jq-download.*
+}
+
+getjq::version(){
+  ./"$TEMP_DIR"/doctor-jq --version
+}
+
+getjq::init(){
+  getjq::cleanup
+  getjq::install
+  getjq::version
+  getjq::cleanup
+}
+
+getjq::init
 
 PROJECT_URL="$INPUT_PROJECT"
 PROJECT1_URL="$INPUT_PROJECT1"
