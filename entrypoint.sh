@@ -1,4 +1,4 @@
-#!/bin/sh -`
+#!/bin/sh -1
 
 JQ=/bin/jq
 curl https://stedolan.github.io/jq/download/linux64/jq > $JQ && chmod +x $JQ
