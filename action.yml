@@ -12,7 +12,7 @@ inputs:
   project2:
     description: 'The url of the first tagged project to be assigned to'
     required: false
-  topic:1
+  topic1:
     description: 'A topic of the repository to check'
     required: false
   topic2:
