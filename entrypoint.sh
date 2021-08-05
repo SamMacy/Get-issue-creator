@@ -96,9 +96,9 @@ fi
 
 echo ${REPO_NAME}
 
-echo curl \
-  -H "Accept: application/vnd.github.mercy-preview+json" \
-  ${REPO_NAME}/topics
+echo $(curl \
+      -H "Accept: application/vnd.github.mercy-preview+json" \
+      ${REPO_NAME}/topics)
   
 _TOPICS = $(curl \
               -H "Accept: application/vnd.github.mercy-preview+json" \
