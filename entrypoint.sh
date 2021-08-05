@@ -17,6 +17,8 @@ fi
 
 if [ "$PROJECT2_URL" ] && [ "$PROJECT1_URL" ]; then
   if [ -z "$TOPIC1" ] || [ -z "$TOPIC2" ]; then
+    echo ${TOPIC1}
+    echo ${TOPIC2}
     echo "A topic is not defined." >&2
     exit 1
   fi
