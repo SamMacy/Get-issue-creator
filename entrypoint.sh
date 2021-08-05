@@ -100,10 +100,10 @@ echo $(curl \
       -H "Accept: application/vnd.github.mercy-preview+json" \
       ${REPO_NAME}/topics)
   
-_TOPICS = $(curl \
+_TOPICS=$(curl -s -X GET --retry 3\
               -H "Accept: application/vnd.github.mercy-preview+json" \
                ${REPO_NAME}/topics)
-  
+           
 echo ${_TOPICS}
 
 
