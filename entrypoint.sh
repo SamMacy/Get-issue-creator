@@ -1,5 +1,4 @@
 #!/bin/sh -l
-npm install github-topics
 
 PROJECT_URL="$INPUT_PROJECT"
 PROJECT1_URL="$INPUT_PROJECT1"
@@ -99,7 +98,7 @@ _TOPICS=$(curl -s -X GET -u "$GITHUB_ACTOR:$TOKEN" --retry 3 \
             -H "Accept: application/vnd.github.mercy-preview+json" \
             ${REPO_URL})
            
-echo ${_TOPICS.getString("topics")}
+echo ${_TOPICS}
 
 curl \
   -H "Accept: application/vnd.github.mercy-preview+json" \
