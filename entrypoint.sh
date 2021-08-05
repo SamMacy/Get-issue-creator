@@ -36,7 +36,47 @@ get_project_type() {
       exit 1
       ;;
   esac
+  
+if [ "$PROJECT2_URL" ] && [ "$PROJECT1_URL" ]; then
+  get_project1_type() {
+  _PROJECT_URL1="$1"
 
+  case "$_PROJECT1_URL" in
+    https://github.com/orgs/*)
+      echo "org"
+      ;;
+    https://github.com/users/*)
+      echo "user"
+      ;;
+    https://github.com/*/projects/*)
+      echo "repo"
+      ;;
+    *)
+      echo "Invalid PROJECT1_URL: $_PROJECT_URL1" >&2
+      exit 1
+      ;;
+  esac
+  
+  get_project2_type() {
+  _PROJECT_URL2="$1"
+
+  case "$_PROJECT2_URL" in
+    https://github.com/orgs/*)
+      echo "org"
+      ;;
+    https://github.com/users/*)
+      echo "user"
+      ;;
+    https://github.com/*/projects/*)
+      echo "repo"
+      ;;
+    *)
+      echo "Invalid PROJECT2_URL: $_PROJECT_URL2" >&2
+      exit 1
+      ;;
+  esac
+  
+fi
   unset _PROJECT_URL
 }
 
