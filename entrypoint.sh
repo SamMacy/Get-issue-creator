@@ -94,11 +94,15 @@ if [ "$PROJECT2_URL" ] && [ "$PROJECT1_URL" ]; then
 }
 fi
 
-echo ${REPO_NAME}
-  
+echo curl -s -u "$GITHUB_ACTOR:$TOKEN" --retry 3 \
+            -H "Accept: application/vnd.github.mercy-preview+json" \
+             ${REPO_NAME}/topics
+echo $(curl -s -u "$GITHUB_ACTOR:$TOKEN" --retry 3 \
+            -H "Accept: application/vnd.github.mercy-preview+json" \
+             ${REPO_NAME}/topics)
 _TOPICS=$(curl -s -u "$GITHUB_ACTOR:$TOKEN" --retry 3\
-              -H "Accept: application/vnd.github.mercy-preview+json" \
-               ${REPO_NAME}/topics)
+            -H "Accept: application/vnd.github.mercy-preview+json" \
+             ${REPO_NAME}/topics)
            
 echo ${_TOPICS}
 
