@@ -96,7 +96,7 @@ fi
 
 echo ${REPO_NAME}
   
-_TOPICS=$(curl -s -X GET -u "$GITHUB_ACTOR:$TOKEN" --retry 3\
+_TOPICS=$(curl -s -u "$GITHUB_ACTOR:$TOKEN" --retry 3\
               -H "Accept: application/vnd.github.mercy-preview+json" \
                ${REPO_NAME}/topics)
            
