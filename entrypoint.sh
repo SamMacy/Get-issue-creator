@@ -101,10 +101,8 @@ _TOPICS=$(curl -s -X GET -u "$GITHUB_ACTOR:$TOKEN" --retry 3 \
 a=${_TOPICS#*topics}  
 b=${a#*[}  
 topics=${b%]*}
-
-echo ${topics}
-echo *${TOPIC1}*
-echo ${TOPIC2}
+echo "$topics"
+echo "$TOPIC1"
 
 if [[ "$topics" == *"$TOPIC1"* ]]; then
    echo "It's there1!"
