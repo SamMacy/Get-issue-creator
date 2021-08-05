@@ -5,7 +5,7 @@ author: srggrs
 inputs:
   project:
     description: 'The url of the project to be assigned to.'
-    required: true
+    required: false
   project1:
     description: 'The url of the first tagged project to be assigned to.'
     required: false
