@@ -103,6 +103,13 @@ topics=${tmp%]*}
 
 echo ${topics}
 
+if [ $string =~ ${TOPIC1} ]; then
+   echo "It's there1!"
+fi
+
+if [ $string =~ ${TOPIC2} ]; then
+   echo "It's there2!"
+fi
 curl \
   -H "Accept: application/vnd.github.mercy-preview+json" \
   https://api.github.com/
