@@ -106,12 +106,10 @@ echo $([[ "$topics" = .*"$TOPIC1".* ]])
 if echo "$topics" | grep -q "$TOPIC1"; then
   _PROJECT_TYPE="$1"
   _PROJECT_URL="$2"
-fi
 
 elif echo "$topics" | grep -q "$TOPIC2"; then
   _PROJECT_TYPE="$1"
   _PROJECT_URL="$2"
-fi
 
 else; then
   "This repository does not have a matching topic"
