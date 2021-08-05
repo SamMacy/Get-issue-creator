@@ -96,7 +96,8 @@ fi
 
 echo curl -s -X GET -u "$GITHUB_ACTOR:$TOKEN" --retry 3 \
             -H "Accept: application/vnd.github.mercy-preview+json" \
-             ${REPO_NAME}/topics
+            X-GitHub-Media-Type: github.v3 \
+            ${REPO_NAME}/topics
              
 echo $(curl -s -X GET -u "$GITHUB_ACTOR:$TOKEN" --retry 3 \
             -H "Accept: application/vnd.github.mercy-preview+json" \
