@@ -108,13 +108,15 @@ case "$topics" in
 *       ) echo no ;;
 esac
 
-if [[ "$topics" = .*"$TOPIC1".* ]]; then
-   echo "It's there1!"
+case "$topics" in
+*"$TOPIC1"*) echo yes ;;
+*       ) echo no ;;
+esac
+
+if echo "$topics" | grep -q "$TOPIC1"; then
+  echo it works
 fi
 
-if [[ "$topics" == .*"$TOPIC2".* ]]; then
-   echo "It's there2!"
-fi
 curl \
   -H "Accept: application/vnd.github.mercy-preview+json" \
   https://api.github.com/
