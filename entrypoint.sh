@@ -104,7 +104,7 @@ _TOPICS=$(curl -s -X GET -u "$GITHUB_ACTOR:$TOKEN" --retry 3 \
            
 echo ${_TOPICS}
 echo "space"
-echo jq '.Instances' _TOPICS
+echo $(jq '.Instances' _TOPICS)
 
 curl \
   -H "Accept: application/vnd.github.mercy-preview+json" \
