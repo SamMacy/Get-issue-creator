@@ -104,12 +104,12 @@ topics=${b%]*}
 echo $([[ "$topics" = .*"$TOPIC1".* ]])
 
 if echo "$topics" | grep -q "$TOPIC1"; then
-  PROJECT_URL='$PROJECT1_URL'
+  PROJECT_URL=${PROJECT1_URL}
   _PROJECT_TYPE="$1"
   _PROJECT_URL="$2"
 
 elif echo "$topics" | grep -q "$TOPIC2"; then
-  PROJECT_URL='$PROJECT2_URL'
+  PROJECT_URL=${PROJECT2_URL}
   _PROJECT_TYPE="$1"
   _PROJECT_URL="$2"
 
