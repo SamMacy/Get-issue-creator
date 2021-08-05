@@ -103,6 +103,11 @@ b=${a#*[}
 topics=${b%]*}
 echo $([[ "$topics" = .*"$TOPIC1".* ]])
 
+case "$topicsr" in
+*"$TOPIC1"*) echo yes ;;
+*       ) echo no ;;
+esac
+
 if [[ "$topics" = .*"$TOPIC1".* ]]; then
    echo "It's there1!"
 fi
