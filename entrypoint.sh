@@ -104,8 +104,8 @@ topics=${b%]*}
 echo $([[ "$topics" = .*"$TOPIC1".* ]])
 
 case "$topics" in
-*"$TOPIC1"*) echo yes
-*       ) echo no
+*"$TOPIC1"*) echo yes ;;
+*       ) echo no ;;
 esac
 
 if [[ "$topics" = .*"$TOPIC1".* ]]; then
