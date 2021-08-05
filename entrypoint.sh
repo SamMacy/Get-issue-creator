@@ -103,8 +103,8 @@ b=${a#*[}
 topics=${b%]*}
 echo $([[ "$topics" = .*"$TOPIC1".* ]])
 
-case "$topicsr" in
-*"$TOPIC1"*) echo yes ;;
+case "$TOPIC1" in
+*"$topics"*) echo yes ;;
 *       ) echo no ;;
 esac
 
