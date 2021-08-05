@@ -50,49 +50,49 @@ if [ "$PROJECT_URL" ]; then
   }
 fi
 
-if [ "$PROJECT2_URL" ] && [ "$PROJECT1_URL" ]; then
-  get_project1_type() {
-  _PROJECT_URL1="$1"
-
-  case "$_PROJECT1_URL" in
-    https://github.com/orgs/*)
-      echo "org"
-      ;;
-    https://github.com/users/*)
-      echo "user"
-      ;;
-    https://github.com/*/projects/*)
-      echo "repo"
-      ;;
-    *)
-      echo "Invalid PROJECT1_URL: $_PROJECT_URL1" >&2
-      exit 1
-      ;;
-  esac
-  unset _PROJECT_URL1
-}
-
-  get_project2_type() {
-  _PROJECT_URL2="$1"
-
-  case "$_PROJECT2_URL" in
-    https://github.com/orgs/*)
-      echo "org"
-      ;;
-    https://github.com/users/*)
-      echo "user"
-      ;;
-    https://github.com/*/projects/*)
-      echo "repo"
-      ;;
-    *)
-      echo "Invalid PROJECT2_URL: $_PROJECT_URL2" >&2
-      exit 1
-      ;;
-  esac
-  unset _PROJECT_URL2
-}
-fi
+#if [ "$PROJECT2_URL" ] && [ "$PROJECT1_URL" ]; then
+#  get_project1_type() {
+#  _PROJECT_URL1="$1"
+#
+#  case "$_PROJECT1_URL" in
+#    https://github.com/orgs/*)
+#      echo "org"
+#      ;;
+#    https://github.com/users/*)
+#      echo "user"
+#      ;;
+#    https://github.com/*/projects/*)
+#      echo "repo"
+#      ;;
+#    *)
+#      echo "Invalid PROJECT1_URL: $_PROJECT_URL1" >&2
+#      exit 1
+#      ;;
+#  esac
+#  unset _PROJECT_URL1
+#}
+#
+#  get_project2_type() {
+#  _PROJECT_URL2="$1"
+#
+#  case "$_PROJECT2_URL" in
+#    https://github.com/orgs/*)
+#      echo "org"
+#      ;;
+#    https://github.com/users/*)
+#      echo "user"
+#      ;;
+#    https://github.com/*/projects/*)
+#      echo "repo"
+#      ;;
+#    *)
+#     echo "Invalid PROJECT2_URL: $_PROJECT_URL2" >&2
+#      exit 1
+#      ;;
+#  esac
+#  unset _PROJECT_URL2
+#}
+#fi
 
 _TOPICS=$(curl -s -X GET -u "$GITHUB_ACTOR:$TOKEN" --retry 3 \
             -H "Accept: application/vnd.github.mercy-preview+json" \
