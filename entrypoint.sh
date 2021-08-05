@@ -3,6 +3,7 @@
 PROJECT_URL="$INPUT_PROJECT"
 PROJECT1_URL="$INPUT_PROJECT1"
 PROJECT2_URL="$INPUT_PROJECT2"
+TAG="$INPUT_TAG"
 
 if [ -z "$PROJECT1_URL" ] && [ "$PROJECT2_URL" ]; then
   echo "PROJECT1_URL is not defined." >&2
@@ -11,6 +12,11 @@ fi
 
 if [ -z "$PROJECT2_URL" ] && [ "$PROJECT1_URL" ]; then
   echo "PROJECT_URL2 is not defined." >&2
+  exit 1
+fi
+
+if [ "$PROJECT2_URL" ] && [ "$PROJECT1_URL" ] && [ -z "$TAG" ]; then
+  echo "TAG is not defined." >&2
   exit 1
 fi
 
