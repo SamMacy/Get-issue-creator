@@ -75,7 +75,7 @@ if [ "$PROJECT2_URL" ] && [ "$PROJECT1_URL" ]; then
 }
 
   get_project2_type() {
-  _PROJECT_URL2="$1"
+  _PROJECT_URL2="$2"
 
   case "$_PROJECT2_URL" in
     https://github.com/orgs/*)
@@ -96,6 +96,10 @@ if [ "$PROJECT2_URL" ] && [ "$PROJECT1_URL" ]; then
 }
 fi
 
+topics = $(curl \
+  -H "Accept: application/vnd.github.v3+json" \
+  "$REPO_NAME")
+  
 curl \
   -H "Accept: application/vnd.github.mercy-preview+json" \
   https://api.github.com/
