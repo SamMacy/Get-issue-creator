@@ -100,6 +100,9 @@ topics = $(curl \
   -H "Accept: application/vnd.github.v3+json" \
   "$REPO_NAME")
   
+echo "$topics"
+
+
 curl \
   -H "Accept: application/vnd.github.mercy-preview+json" \
   https://api.github.com/
