@@ -1,3 +1,7 @@
-FROM python:latest
+FROM python:3
 
-CMD ["Script.py"]
+ADD Script.py /
+
+RUN pip install pystrich
+
+CMD [ "python", "./Script.py" ]
