@@ -1,5 +1,5 @@
 FROM python:3
 
-COPY script.py /
+COPY ./script.py /
 WORKDIR /
-ENTRYPOINT ["./script.py"]
+ENTRYPOINT ["script.py"]
