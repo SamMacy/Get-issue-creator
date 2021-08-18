@@ -1,5 +1,7 @@
-FROM python:3
-WORKDIR /usr/src/app
-COPY . .
+FROM python:latest
+
+WORKDIR /usr/local/bin
+
+COPY Script.py .
+
 CMD ["Script.py"]
-ENTRYPOINT ["python3"]
