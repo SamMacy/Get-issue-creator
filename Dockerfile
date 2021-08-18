@@ -1,5 +1,5 @@
 FROM python:3
-
-COPY ./script.py /
-WORKDIR /
-ENTRYPOINT ["script.py"]
+WORKDIR /usr/src/app
+COPY . .
+CMD ["script.py"]
+ENTRYPOINT ["python3"]
