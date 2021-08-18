@@ -1,5 +1,5 @@
 FROM python:3
 
-COPY . .
-CMD ["script.py"]
-ENTRYPOINT ["python3"]
+COPY script.py /
+
+ENTRYPOINT ["./script.py"]
