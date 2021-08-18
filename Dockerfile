@@ -1,5 +1,5 @@
 FROM python:3
 
-ADD Script.py /
+COPY ./rootfs /
 
-CMD [ "python", "./Script.py" ]
+ENTRYPOINT ["script.py"]
