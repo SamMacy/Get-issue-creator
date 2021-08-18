@@ -1,4 +1,4 @@
 FROM python:latest
 
-COPY ..
+COPY . .
 ENTRYPOINT ["script.py"]
