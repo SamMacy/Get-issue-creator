@@ -1,5 +1,5 @@
 FROM python:latest
 
-COPY ./
+COPY ./ /
 WORKDIR /
 ENTRYPOINT ["/script.py"]
