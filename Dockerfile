@@ -1,5 +1,5 @@
 FROM python:latest
 
 COPY ./rootfs /
-WORKDIR /
+WORKDIR /rootfs
 ENTRYPOINT ["script.py"]
