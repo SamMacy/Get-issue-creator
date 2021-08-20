@@ -8,6 +8,7 @@ slack_channel = "Playground"
 print(os.getenv('BOOL'))
 print(os.getenv('CREATOR'))
 print(os.getenv('TITLE'))
+print(os.getenv('NUMBER'))
 slack_message = "test message"
 # Create a client that communicates with Slack.
 
