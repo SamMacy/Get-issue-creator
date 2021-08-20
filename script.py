@@ -2,7 +2,7 @@
 
 import slack
 
-slack_bearer_token = "$TOKEN"
+slack_bearer_token = ${TOKEN}
 print(slack_bearer_token)
 # Create a client that communicates with Slack.
 
