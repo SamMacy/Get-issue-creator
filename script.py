@@ -7,6 +7,7 @@ slack_bearer_token = os.getenv('TOKEN')
 slack_channel = "Playground" 
 print(os.getenv('BOOL'))
 print(os.getenv('CREATOR'))
+print(os.getenv('TITLE'))
 slack_message = "test message"
 # Create a client that communicates with Slack.
 
