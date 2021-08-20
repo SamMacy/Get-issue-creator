@@ -20,14 +20,14 @@ slack_message = "test message"
 
 slack_client = slack.WebClient(token=slack_bearer_token)
 
-"blocks": [
-		{
-			"type": "section",
-			"text": {
-				"type": "mrkdwn",
-				"text": "<http://www.example.com|This message *is* a link>\n<mailto:bob@example.com|Email Bob Roberts>"
-			}
-		}
+blocks: [
+	  {
+	  "type": "section",
+	  "text": {
+              "type": "mrkdwn",
+              "text": "<http://www.example.com|This message *is* a link>\n<mailto:bob@example.com|Email Bob Roberts>"
+	          }
+	  }
 	]
   
 response = slack_client.chat_postMessage(
