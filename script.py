@@ -7,6 +7,7 @@ slack_bearer_token = os.getenv('TOKEN')
 slack_channel = "Playground"
 repo = os.getenv('REPO_URL')
 issue_number = os.getenv('NUMBER')
+repo_url = "https://github.com/" +repo
 issue = "https://github.com/" +repo + "/issues/" + issue_number
 
 print(issue)
@@ -25,7 +26,7 @@ blocks: [
 	  "type": "section",
 	  "text": {
               "type": "mrkdwn",
-              "text": "<http://www.example.com|This message *is* a link>\n<mailto:bob@example.com|Email Bob Roberts>"
+              "text": "New customer submitted issue in <" + repo_url + "|" + repo+ ">\n issue number <" + issue + "|" + issue_number + ">"
 	          }
 	  }
 	]
