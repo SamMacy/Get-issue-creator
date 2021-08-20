@@ -7,7 +7,7 @@ slack_bearer_token = os.getenv('TOKEN')
 slack_channel = "Playground"
 repo = os.getenv('REPO_URL')
 issue_number = os.getenv('NUMBER')
-issue = "https://github.com/Senzing" +repo + "/issue/" + issue_number
+issue = "https://github.com/" +repo + "/issues/" + issue_number
 
 print(issue)
 print(os.getenv('BOOL'))
