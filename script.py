@@ -18,7 +18,7 @@ def post_message_to_slack(text, blocks = None):
         'blocks': json.dumps(blocks) if blocks else None
     }).json()	
   
-  slack_info = 'There are *{}* double images detected for *{}* products. Please check the <https://{}.s3-eu-west-1.amazonaws.com/{}|Double Images Monitor>.'.format(
-  double_images_count, products_count, bucket_name, file_name)
+    slack_info = 'There are *{}* double images detected for *{}* products. Please check the <https://{}.s3-eu-west-1.amazonaws.com/{}|Double Images Monitor>.'.format(
+    double_images_count, products_count, bucket_name, file_name)
 
 post_message_to_slack(slack_info)
