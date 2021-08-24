@@ -13,6 +13,7 @@ issue = "https://github.com/" +repo + "/issues/" + issue_number
 print(issue)
 print(os.getenv('BOOL'))
 print(os.getenv('CREATOR'))
+print(os.getenv('TOKEN'))
 print(os.getenv('TITLE'))
 slack_message = "test message"
 
